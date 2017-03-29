@@ -11,12 +11,12 @@ public:
 	Car(Car&&);							//move constructor
 	Car& operator=(const Car&);			//copy assignment
 	Car& operator=(Car&&);				//move assignment
-	void Read();
-	void Show();
+	void Read();						//въвеждане от клавиатурата
+	void Show();						//извеждане на екрана
 private:
-	char* model;
-	char* regnum;
-	int year;
-	Person owner;
+	char* model;			//модел
+	char* regnum;			//регистрационен номер
+	int year;				//година на производство
+	Person owner;			//собственик (обект на Person)
 };
 

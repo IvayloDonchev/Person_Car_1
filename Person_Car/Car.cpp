@@ -4,8 +4,11 @@
 Car::Car() : model(nullptr), regnum(nullptr), year(0), owner()
 {}
 
-Car::Car(char *m, char *rn, int y, Person o) : model(new char[strlen(m)+1]),
-           regnum(new char[strlen(rn)+1]), year(y), owner(o)
+Car::Car(char *m, char *rn, int y, Person o) : 
+	model(new char[strlen(m)+1]),
+    regnum(new char[strlen(rn)+1]), 
+	year(y), 
+	owner(o)	//тук ще се изпълни копиращия конструктор на Person
 {
 	strcpy_s(model, strlen(m) + 1, m);
 	strcpy_s(regnum, strlen(rn) + 1, rn);
