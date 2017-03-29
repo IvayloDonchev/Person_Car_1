@@ -5,21 +5,21 @@ using namespace std;
 
 int main()
 {
-	Person p;
-	p.Read();
-	p.Show();
-	Person p2(p);
+	Person p1;
+	p1.Read();
+	p1.Show();
+	Person p2(p1);
 	p2.Show();
 	Person p3;
-	p3 = p;
+	p3 = p1;
 	p3.Show();
-	p2 = move(p3);
+	p2 = move(p3); 
 	p2.Show();
 	cout << "p3: ";
-	p3.Show();
+	p3.Show();  //p3 вече го няма
 
 	Car c1("Opel Astra", "BT 1234 TB", 1998, "Ivan Ivanov", 1990);
-	Car c2("Opel Astra", "BT 1234 TB", 1998, p2);
+	Car c2("Opel Vectra", "CB 1111 CB", 1993, p2);
 	c1.Show();
 	c2.Show();
 	Car c3(c1);
@@ -30,5 +30,7 @@ int main()
 	c2.Show();
 	c1.Show();
 
-
+	Car c4;
+	c4.Read();
+	c4.Show();
 }

@@ -81,6 +81,28 @@ Car & Car::operator=(Car &&other)
 	return *this;
 }
 
+void Car::Read()
+{
+	char s[45];
+	std::cout << "Enter car model: ";
+	std::cin.getline(s,45);
+	if (model) delete[] model;
+	size_t size = strlen(s) + 1;
+	model = new char[size];
+	strcpy_s(model, size, s);
+	std::cout << "Enter registration number: ";
+	std::cin.getline(s, 45);
+	size = strlen(s) + 1;
+	if (regnum) delete[] regnum;
+	regnum = new char[size];
+	strcpy_s(regnum, size, s);
+	std::cout << "Enter year of production: ";
+	std::cin >> year;
+	std::cin.ignore();
+	std::cout << "Enter owner: ";
+	owner.Read();
+}
+
 void Car::Show()
 {
 	if (model)

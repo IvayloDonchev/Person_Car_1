@@ -11,6 +11,7 @@ public:
 	Car(Car&&);							//move constructor
 	Car& operator=(const Car&);			//copy assignment
 	Car& operator=(Car&&);				//move assignment
+	void Read();
 	void Show();
 private:
 	char* model;

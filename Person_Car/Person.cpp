@@ -50,12 +50,13 @@ void Person::Read()
 		delete[] name;
 	char s[25];
 	std::cout << "Enter the name of person: ";
-	std::cin >> s;
+	std::cin.getline(s,25);
 	size_t size = strlen(s) + 1;
 	name = new char[size];
 	strcpy_s(name, size, s);
 	std::cout << "Enter the year of birth: ";
 	std::cin >> year;
+	std::cin.ignore();
 }
 
 void Person::Show()
