@@ -1,6 +1,7 @@
 #include "Person.h"
 #include "Car.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
@@ -33,4 +34,11 @@ int main()
 	Car c4;
 	c4.Read();
 	c4.Show();
+
+	vector<Car> carVector{ Car("Opel Astra", "BT 1234 TB", 1998, "Ivan Ivanov", 1990),
+		                   Car("Opel Vectra", "CB 4321 BC", 2010, "Petar Petrov", 1986),
+	                       Car("Ford Fiesta", "BT 1111 BT", 1995, "Stefan Stefanov", 1956) };
+	for (auto c : carVector)
+		c.Show();
+
 }
