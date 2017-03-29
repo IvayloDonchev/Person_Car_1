@@ -37,16 +37,18 @@ Car::Car(const Car &other) :
 	strcpy_s(regnum, strlen(other.regnum) + 1, other.regnum);
 }
 
-Car::Car(Car && other) : 
-	model(std::move(other.model)),
-	regnum(std::move(other.regnum)),
-	year(std::move(other.year)),
-	owner(std::move(other.owner))	//тук ще се извика move конструкторa на Person
+Car::Car(Car && other) //: 
+	//model(std::move(other.model)),
+	//regnum(std::move(other.regnum)),
+	//year(std::move(other.year)),
+	//owner(std::move(other.owner))	//тук ще се извика move конструкторa на Person
 {
-	other.model = nullptr;
+	*this = std::move(other);
+	//4other = Car();
+	/*other.model = nullptr;
 	other.regnum = nullptr;
 	other.year = 0;
-	other.owner = Person();
+	other.owner = Person();*/
 }
 
 Car & Car::operator=(const Car &other)
